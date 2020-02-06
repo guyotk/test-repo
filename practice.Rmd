@@ -29,6 +29,12 @@ If you want to have text hidden from the document:
 secret comment
 ```
 
+Added code: 
+```{r}
+storms %>%
+  summarize(wind = mean(wind))
+```
+
 ```{r make-plot, fig.width = 8, fig.height = 8}
 storms %>%
   group_by(year) %>%
