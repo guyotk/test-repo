@@ -1,0 +1,49 @@
+---
+title: "PPOL 670"
+author: "Katie Guyot"
+date: "2/5/2020"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+# Title
+
+Date:
+
+### By Katie Guyot
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r load-packages, message = FALSE}
+library(tidyverse)
+```
+
+If you want to have text hidden from the document:
+(there is hidden text under this)
+
+```{r, include = FALSE, eval = FALSE}
+secret comment
+```
+
+```{r make-plot, fig.width = 8, fig.height = 8}
+storms %>%
+  group_by(year) %>%
+  summarize(wind = mean(wind)) %>%
+  ggplot(mapping = aes(x = year, y = wind)) +
+  geom_line() +
+  geom_point()
+```
+
+You can use all LaTeX code in .Rmd files, such as:
+\newpage 
+$2+2$
+
+You can author books or blogs in bookdown or blogdown.
+
+Slides use reveal js (?), which lets you include gifs!
+
+Can also do fact sheets and PDFs.
